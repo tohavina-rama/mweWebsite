@@ -3,7 +3,10 @@ Theme Name: Astra Child
 Template: astra
 */
 
-h2 {
-    color: green !important;
-}
 
+@import url('satoshi.css');
+
+/* Applique la police 'Satoshi-Medium' à tout le site */
+body, body * {
+    font-family: 'Satoshi-Medium' !important;
+}
