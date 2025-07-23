@@ -1,0 +1,24 @@
+@import url( "https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" );
+@import "../../global/tailwind.scss";
+
+@layer utilities {
+	body * {
+		@apply font-sans;
+	}
+
+	hr {
+		@apply border-t border-b-0 border-x-0 border-solid border-border-subtle;
+	}
+
+	input[type="checkbox"] {
+		@apply before:border-0;
+	}
+
+	::-webkit-file-upload-button {
+		@apply text-text-primary;
+	}
+}
+
+th.column-surerank-data {
+	width: 160px !important;
+}
