@@ -2,11 +2,100 @@
 Theme Name: Astra Child
 Template: astra
 */
+@import url("satoshi.css");
 
-
-@import url('satoshi.css');
+:root {
+  --violetMWE: #726396;
+  --orangeMWE: #f99a3d;
+  --greenMWE: #5fb16c;
+  --beigeMWE: #fffbf4;
+}
 
 /* Applique la police 'Satoshi-Medium' à tout le site */
-body, body * {
-    font-family: 'Satoshi-Medium' !important;
+body,
+body * {
+  font-family: "Satoshi-Medium" !important;
+}
+
+.menu-item a {
+  font-size: larger !important;
+}
+
+.orangeSlogan {
+  color: var(--orangeMWE);
+  font-size: larger;
+}
+
+.greenSlogan {
+  color: var(--greenMWE);
+  font-style: italic;
+}
+
+.slideContainer {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.slide {
+  position: absolute; /* Pour empiler les slides */
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  pointer-events: none; /* empêche interaction sur les slides cachées */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative; /* pour que la slide active soit bien dans le flux */
+  z-index: 10;
+}
+
+.slide img {
+  width: auto;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.slideContent {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: auto;
+}
+
+.slideContent h2 {
+ font-size: large;
+ font-weight: bolder;
+}
+
+.dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #bf1f1f;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dots span.active {
+  background: #333;
 }
